@@ -8,25 +8,34 @@
 </head>
 <body>
     <h1>Madlibs</h1>
-        <form id="story-form" action="/story.html">
-        <label for="place-input">Place:</label>
-        <input type="text" name="place-input">
-        <br><br>
-        <label for="noun-input">Noun:</label>
-        <input type="text" name="noun-input">
-        <br><br>
-        <label for="verb-input">Verb:</label>
-        <input type="text" name="verb-input">
-        <br><br>
-        <label for="adjective-input">Adjective:</label>
-        <input type="text" name="adjective-input">
-        <br><br>
-        <label for="pnoun-input">Plural noun:</label>
-        <input type="text" name="pnoun-input">
-        <br><br>
-        <a href="/story.html">
+
+        <!-- <form id="story-form" action="/Templates/story.html">
+            <label for="place-input">Place:</label>
+            <input type="text" name="place">
+            <br><br>
+            <label for="noun-input">Noun:</label>
+            <input type="text" name="noun">
+            <br><br>
+            <label for="verb-input">Verb:</label>
+            <input type="text" name="verb">
+            <br><br>
+            <label for="adjective-input">Adjective:</label>
+            <input type="text" name="adjective">
+            <br><br>
+            <label for="pnoun-input">Plural noun:</label>
+            <input type="text" name="plural_noun">
+            <br><br>
+        <a href="/Templates/story.html">
             <button type="submit">Submit</button>
         </a>
+    </form> -->
+
+    <form id="story-form" action="/Templates/story.html">
+    {% for prompt in prompts %}
+      <p>{{prompt}}:
+        <input name="{{ prompt }}">
+      </p>
+    {% endfor %}
     </form>
 </body>
 </html>
